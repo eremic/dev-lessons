@@ -21,7 +21,27 @@
  */
 
 module.exports = function(){
-	var value;
+	var value = 999 * 999;
+	var nStr;
+	var nStrReversed;
+	var sqrt;
+	var divisor;
+	while (value > 100000) {
+		nStr = value.toString();
+		nStrReversed = nStr.split('').reverse().join('');
 
-	return value;
+		if (nStr === nStrReversed) {
+			sqrt = Math.sqrt(value);
+			divisor = Math.floor(sqrt);
+			while (value % divisor !== 0 && divisor >= 100 & value / divisor <= 999) {
+				divisor--;
+		}
+
+		if (value % divisor === 0 && divisor >= 100 & value / divisor <= 999)
+			return value
+		}
+
+		value--;
+	}
+
 };

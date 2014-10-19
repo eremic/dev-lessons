@@ -20,7 +20,13 @@
  */
 
 module.exports = function(){
-	var value;
-
-	return value;
+	var i = 2;
+	var target = 600851475143;
+	while (target > i) {
+		if (target % i === 0) {
+			target = target / i;
+		}
+	i++;
+	}
+	return i
 };

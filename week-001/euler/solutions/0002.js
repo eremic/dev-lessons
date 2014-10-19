@@ -15,7 +15,20 @@
  */
 
 module.exports = function(){
+	var iCurrent = 1;
+	var iPrevious = 0;
 	var sum = 0;
+	var iTemp;
+	var ceiling = 4000000;
 
+	while(iCurrent < ceiling){
+		iTemp = iCurrent;
+		iCurrent += iPrevious;
+		iPrevious = iTemp;
+
+		if(iCurrent % 2 === 0){
+			sum += iCurrent;
+		}
+	}
 	return sum;
 };
