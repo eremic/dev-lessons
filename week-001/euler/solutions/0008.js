@@ -25,7 +25,16 @@ module.exports = function(){
                  '05886116467109405077541002256983155200055935729725' +
                  '71636269561882670428252483600823257530420752963450';
 
-	var value;
+	var value = [];
 
-	return value;
+        for (var x = 0; x < numStr.length - 13 ; x++) {
+                var product = numStr[x] * numStr[x + 1] * numStr[x + 2] * numStr[x + 3] * numStr[x + 4]* numStr[x + 5]* numStr[x + 6]* numStr[x + 7]* numStr[x + 8]* numStr[x + 9]* numStr[x + 10]* numStr[x + 11] * numStr[x + 12];
+                value.push(product);
+        }
+        value.sort(function(a, b) {
+                return a - b;
+        });
+
+
+	return value.pop();
 };
